@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 def count_words(text):
     words = text.split()
     wordcount = len(words)
@@ -7,8 +5,10 @@ def count_words(text):
 
 def count_chars(text):
     lower_text = text.lower()
-    chars = defaultdict(int)
+    chars = {}
     for char in lower_text:
-        count = chars.setdefault(char, 0)
-        chars[char] += 1
+        if char not in chars:
+            chars[char] = 1
+        else:
+            chars[char] += 1
     return chars 
