@@ -9,7 +9,6 @@ def main():
     book = "books/frankenstein.txt"
     text = get_book_text("books/frankenstein.txt")
     wordcount = count_words(text)
-    print(f"Found {wordcount} total words")
     charcount = count_chars(text)
     sorted_list = sort_charcount(charcount)
     print("============ BOOKBOT ============")
@@ -20,6 +19,7 @@ def main():
     for char in sorted_list:
         if char["char"].isalpha():
             print(f"{char["char"]}: {char["num"]}")
+
 main()
 
 
